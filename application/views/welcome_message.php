@@ -59,7 +59,7 @@
               <input type="text" class="form-control custom-input" placeholder="Masukkan nama pengguna">
             </div>
           </div>
-          <a href="<?php echo base_url('apps');?>" class="btn px-5 custom-btn">SETERUSNYA</a>
+          <a href="<?php echo base_url('apps');?>" class="btn px-5 custom-btn">SETERUSNYA.</a>
         </div>
 
       </div>
