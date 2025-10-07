@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Centered Card with Background</title>
+  <title>SPOKe</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -59,7 +59,7 @@
               <input type="text" class="form-control custom-input" placeholder="Masukkan nama pengguna">
             </div>
           </div>
-          <a href="<?php echo base_url('apps');?>" class="btn px-5 custom-btn">SETERUSNYA.</a>
+          <a href="<?php echo base_url('apps');?>" class="btn px-5 custom-btn">SETERUSNYA</a>
         </div>
 
       </div>
