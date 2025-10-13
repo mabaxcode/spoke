@@ -7,12 +7,13 @@
   <link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">
   <script src="<?php echo base_url()?>/assets/js/bootstrap.bundle.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <style>
     body, html {
       height: 100%;
       margin: 0;
-	  /* font-family: 'Comic Sans MS', cursive, sans-serif; */
-	  font-family: 'Press Start 2P', cursive;
+      font-family: 'Anton', sans-serif;
+	  /* font-family: 'Press Start 2P', cursive; */
     }
     .full-height {
       height: 100vh; /* Full screen height */
@@ -55,17 +56,17 @@
   }
 
   .question-header {
-    background-color: #179cff;
-    color: white;
-    font-size: 1rem;
+    background-color: #ffcf01;
+    color: black;
+    font-size: 1.5rem;
     font-weight: bold;
-    padding: 15px;
+    padding: 10px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
   }
 
   .options {
-    padding: 20px;
+    padding: 10px;
   }
 
   .options button {
@@ -75,14 +76,14 @@
     background-color: #f4faff;
     border: none;
     border-radius: 10px;
-    padding: 10px;
+    padding: 12px;
     cursor: pointer;
-    font-size: 0.7rem;
+    font-size: 1rem;
     transition: background-color 0.3s, transform 0.2s;
   }
 
   .options button:hover {
-    background-color: #a8a8a8;
+    background-color: #4aa9ff;
     transform: scale(1.03);
   }
 
@@ -121,7 +122,7 @@
 <body>
   <div class="d-flex justify-content-center align-items-center full-height">
     <div class="card bg-dark text-white border-0" style="width: 900px; height: 700px; border-radius: 20px; overflow: hidden;">
-      <img src="<?php echo base_url('img/page-13.png')?>" class="card-img" alt="Paris Background" style="height: 100%;">
+      <img src="<?php echo base_url('img/13.png')?>" class="card-img" alt="Paris Background" style="height: 100%;">
       <div class="card-img-overlay d-flex flex-column justify-content-between text-center">
 
 
@@ -142,16 +143,9 @@
 
         
         <!-- Bottom content -->
-       <div class="mt-auto mb-1">
-            <p style="color: black;">Klik butang untuk ke halaman seterusnya <a href="<?php echo base_url('apps/pagesFourteen');?>">
-                <img src="<?php echo base_url('img/next.png')?>" 
-                    alt="Next Button" 
-                    style="height: 50px; cursor: pointer; transition: transform 0.2s;"
-                    onmouseover="this.style.transform='scale(1.1)'"
-                    onmouseout="this.style.transform='scale(1)'">
-            </a></p>
-            
-            </div>
+       <div class="mt-auto mb-0" align="right">
+          <a href="<?php echo base_url('apps/pagesFourteen');?>" class="btn px-5 custom-btn">SETERUSNYA</a>
+        </div>
 
 
       </div>
