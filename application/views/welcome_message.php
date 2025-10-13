@@ -6,27 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">
   <script src="<?php echo base_url()?>/assets/js/bootstrap.bundle.min.js"></script>
-<<<<<<< HEAD
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-=======
   <!-- <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
->>>>>>> origin/main
   <style>
     body, html {
       height: 100%;
       margin: 0;
-<<<<<<< HEAD
-      font-family: 'Anton', sans-serif;
-	  /* font-family: 'Press Start 2P', cursive; */
-=======
 /*      font-family: 'Press Start 2P', cursive;*/
       font-family: 'Anton', sans-serif;
 /*font-weight: 700;*/
 font-size: 20px;
 
->>>>>>> origin/main
     }
 
     .full-height {
@@ -75,13 +66,8 @@ font-size: 20px;
 </head>
 <body>
   <div class="d-flex justify-content-center align-items-center full-height">
-<<<<<<< HEAD
-    <div class="card bg-dark text-white border-0" style="width: 900px; height: 700px; border-radius: 20px; overflow: hidden;">
-      <img src="<?php echo base_url('img/page-1.png')?>" class="card-img" alt="Paris Background" style="height: 100%;">
-=======
     <div class="card bg-dark text-white border-0" style="width: 900px; height: 700px; border-radius: 20px; overflow: hidden; position: relative;">
-      <img src="<?php echo base_url('img/SPOKe.png')?>" class="card-img" alt="Paris Background" style="height: 100%;">
->>>>>>> origin/main
+      <img src="<?php echo base_url('img/page-1.png')?>" class="card-img" alt="Paris Background" style="height: 100%;">
       <div class="card-img-overlay d-flex flex-column justify-content-between text-center">
 
         <!-- ✅ Top Right Buttons -->
