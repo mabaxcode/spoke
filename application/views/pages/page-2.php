@@ -12,8 +12,15 @@
     body, html {
       height: 100%;
       margin: 0;
+<<<<<<< HEAD
       font-family: 'Anton', sans-serif;
 	  /* font-family: 'Press Start 2P', cursive; */
+=======
+	  /* font-family: 'Comic Sans MS', cursive, sans-serif; */
+/*	  font-family: 'Press Start 2P', cursive;*/
+font-family: 'Anton', sans-serif;
+font-size: 20px;
+>>>>>>> origin/main
     }
     .full-height {
       height: 100vh; /* Full screen height */
