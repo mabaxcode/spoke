@@ -6,13 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">
   <script src="<?php echo base_url()?>/assets/js/bootstrap.bundle.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <style>
     body, html {
       height: 100%;
       margin: 0;
 	  /* font-family: 'Comic Sans MS', cursive, sans-serif; */
-	  font-family: 'Press Start 2P', cursive;
+/*	  font-family: 'Press Start 2P', cursive;*/
+font-family: 'Anton', sans-serif;
+font-size: 20px;
     }
     .full-height {
       height: 100vh; /* Full screen height */
