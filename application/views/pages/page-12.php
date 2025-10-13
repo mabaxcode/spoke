@@ -43,6 +43,26 @@
   background-color: darkred !important; /* darker red on hover */
   color: yellow !important;
 }
+ .top-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .top-buttons .btn {
+      background-color: black !important;
+      color: yellow !important;
+      border: 2px solid yellow !important;
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+
+    .top-buttons .btn:hover {
+      background-color: yellow !important;
+      color: black !important;
+    }
 
 .question-card {
     background-color: #a3d9ff;
@@ -120,7 +140,7 @@
 </head>
 <body>
   <div class="d-flex justify-content-center align-items-center full-height">
-    <div class="card bg-dark text-white border-0" style="width: 900px; height: 700px; border-radius: 20px; overflow: hidden;">
+    <div class="card bg-dark text-white border-0" style="width: 1200px; height: 700px; border-radius: 20px; overflow: hidden;">
       <img src="<?php echo base_url('img/12.png')?>" class="card-img" alt="Paris Background" style="height: 100%;">
       <div class="card-img-overlay d-flex flex-column justify-content-between text-center">
 
@@ -139,12 +159,15 @@
   </div>
 </div>
 
-
-        
-        <!-- Bottom content -->
-       <div class="mt-auto mb-0" align="right">
-          <a href="<?php echo base_url('apps/pagesThirteen');?>" class="btn px-5 custom-btn">SETERUSNYA</a>
+<div class="top-buttons">
+        <a href="<?php echo base_url();?>" class="btn btn-sm">🏠 Home</a>
+          <a href="<?php echo base_url('userlogout');?>" class="btn btn-sm">🚪 Log Keluar</a>
         </div>
+
+<div class="d-flex justify-content-between mt-auto mb-0 px-4">
+    <a href="<?php echo base_url('apps/pagesEleven');?>" class="btn px-5 custom-btn">SEBELUMNYA</a>
+  </div>
+
 
 
       </div>
@@ -198,6 +221,7 @@
     // console.log("Selected Button ID:", answerId);
     console.log("Selected Button Value:", answerValue);
     alert ("Selected Button Value (for testing only): "+ answerValue);
+    window.location.href = "<?php echo base_url('apps/pagesThirteen'); ?>";
     // console.log("Selected Answer Text:", answerText);
   });
 </script>

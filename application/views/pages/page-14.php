@@ -14,6 +14,26 @@
 	  /* font-family: 'Comic Sans MS', cursive, sans-serif; */
 	  font-family: 'Press Start 2P', cursive;
     }
+     .top-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .top-buttons .btn {
+      background-color: black !important;
+      color: yellow !important;
+      border: 2px solid yellow !important;
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+
+    .top-buttons .btn:hover {
+      background-color: yellow !important;
+      color: black !important;
+    }
     .full-height {
       height: 100vh; /* Full screen height */
     }

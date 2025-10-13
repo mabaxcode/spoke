@@ -89,32 +89,28 @@ font-size: 20px;
       <img src="<?php echo base_url('img/page-1.png')?>" class="card-img" alt="Paris Background" style="height: 100%;">
       <div class="card-img-overlay d-flex flex-column justify-content-between text-center">
 
+        <!-- ✅ Top Right Buttons -->
+        <div class="top-buttons">
+          <?php /*<a href="<?php echo base_url('home');?>" class="btn btn-sm">🏠 Home</a> */?>
+          <a href="<?php echo base_url('userlogout');?>" class="btn btn-sm">🚪 Log Keluar</a>
+        </div>
 
-      <?php if ($this->session->flashdata('error')): ?>
-              <div class="alert alert-danger mt-3">
-                <?php echo $this->session->flashdata('error'); ?>
-              </div>
-            <?php endif; ?>
-        
+        <h2 class="welcome-text" style="color: #FFD700;font-size: 30px;text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);">Selamat Datang, <?php echo $this->session->userdata('name'); ?> !</h2>
 
         <!-- Bottom content -->
-         
         <div class="mt-auto mb-5">
-<form method="post" action="<?php echo base_url('auth/user_login'); ?>">
 
-          <div class="d-flex justify-content-center mb-3">
+
+          <!-- <div class="d-flex justify-content-center mb-3">
             <div style="width: 600px;">
-              <input type="text" name="username" class="form-control custom-input" placeholder="Masukkan nama pengguna" required>
+              <input type="text" class="form-control custom-input" placeholder="Masukkan nama pengguna">
             </div>
-          </div>
+          </div> -->
 
           
 
-          <button type="submit" class="btn px-5 custom-btn">LOG MASUK</button>
-           </form>
+          <a href="<?php echo base_url('apps');?>" class="btn px-5 custom-btn">MULA</a>
         </div>
-
-       
 
       </div>
     </div>

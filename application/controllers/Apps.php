@@ -8,9 +8,14 @@ class Apps extends CI_Controller {
         parent::__construct();
 
 		// Check if user is logged in
-		// if (!$this->session->userdata('user_id')) {
-		// 	redirect();
-		// }
+		if (!$this->session->userdata('user_id')) {
+			redirect();
+		}
+
+        $this->user_id = $this->session->userdata('user_id');
+
+        $this->load->model('Apps_model');
+        $this->load->helper(['url', 'form']);
 	}
 
 	public function index()
@@ -78,7 +83,27 @@ class Apps extends CI_Controller {
         // $this->load->view('pages/page-14');   
         echo "coming soon";
     }
-    
 
+    function save_answer($data=false)
+    {
+        $post = $this->input->post();
+
+        $updateAnswer = $this->Apps_model->update_answer($this->user_id, $post);
+
+        // echo "<pre>"; print_r($post); echo "</pre>"; exit;
+
+        if($updateAnswer == true){
+            echo json_encode([
+                "success" => true,
+                "message" => "Success"
+            ]);
+        } else {
+            echo json_encode([
+                "success" => false,
+                "message" => "Gagal untuk simpan jawapan"
+            ]);
+        }
+
+    }
     
 }

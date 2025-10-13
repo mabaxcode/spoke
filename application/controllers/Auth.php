@@ -12,6 +12,7 @@ class Auth extends CI_Controller {
         }
 
         $this->load->model('Auth_model');
+        $this->load->model('Apps_model');
         $this->load->helper(['url', 'form']);
     }
 
@@ -39,6 +40,33 @@ class Auth extends CI_Controller {
         } else {
             $this->session->set_flashdata('error', 'Invalid username or password');
             redirect('auth');
+        }
+    }
+
+     public function user_login() {
+
+        $username = $this->input->post('username', true);
+
+        $user = $this->Apps_model->check_login($username);
+
+        if ($user) {
+            // Set session data
+            $this->session->set_userdata([
+                'user_id'      => $user->id,
+                'username'     => $user->username,
+                'name'         => $user->name,
+                'logged_in'    => true
+            ]);
+
+            $questionCreated = $this->Apps_model->created_question($user->id);
+            if($questionCreated == false):
+                $this->Apps_model->populate_all_question($user->id);
+            endif;
+            
+            redirect('home');
+        } else {
+            $this->session->set_flashdata('error', 'Nama pengguna tidak wujud !');
+            redirect();
         }
     }
 }
