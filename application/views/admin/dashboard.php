@@ -43,7 +43,7 @@
 <nav class="pc-sidebar">
   <div class="navbar-wrapper">
     <div class="m-header">
-      <a href="../dashboard/index.html" class="b-brand text-primary">
+      <a href="#" class="b-brand text-primary">
         <!-- ========   Change your logo from here   ============ -->
         <?php /*<img src="<?php echo base_url(); ?>assets-internal/images/logo-dark.svg" class="img-fluid logo-lg" alt="logo"> */?>
         <h4>SPOKe</h4>
@@ -51,108 +51,41 @@
     </div>
     <div class="navbar-content">
       <ul class="pc-navbar">
-        <li class="pc-item">
-          <a href="../dashboard/index.html" class="pc-link">
+        <!-- <li class="pc-item active">
+          <a href="#" class="pc-link">
             <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
             <span class="pc-mtext">Dashboard</span>
           </a>
-        </li>
+        </li> -->
 
         <li class="pc-item pc-caption">
-          <label>UI Components</label>
+          <label>Menu</label>
           <i class="ti ti-dashboard"></i>
         </li>
         <li class="pc-item">
-          <a href="../elements/bc_typography.html" class="pc-link">
+          <a href="<?php echo base_url('admin/answers');?>" class="pc-link">
             <span class="pc-micon"><i class="ti ti-typography"></i></span>
-            <span class="pc-mtext">Typography</span>
+            <span class="pc-mtext">Student's Answer</span>
           </a>
         </li>
         <li class="pc-item">
           <a href="../elements/bc_color.html" class="pc-link">
             <span class="pc-micon"><i class="ti ti-color-swatch"></i></span>
-            <span class="pc-mtext">Color</span>
+            <span class="pc-mtext">Add Student</span>
           </a>
         </li>
         <li class="pc-item">
           <a href="../elements/icon-tabler.html" class="pc-link">
             <span class="pc-micon"><i class="ti ti-plant-2"></i></span>
-            <span class="pc-mtext">Icons</span>
+            <span class="pc-mtext">Student List</span>
           </a>
         </li>
 
-        <li class="pc-item pc-caption">
-          <label>Pages</label>
-          <i class="ti ti-news"></i>
-        </li>
-        <li class="pc-item">
-          <a href="../pages/login.html" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-lock"></i></span>
-            <span class="pc-mtext">Login</span>
-          </a>
-        </li>
-        <li class="pc-item">
-          <a href="../pages/register.html" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-user-plus"></i></span>
-            <span class="pc-mtext">Register</span>
-          </a>
-        </li>
+     
+       
 
-        <li class="pc-item pc-caption">
-          <label>Other</label>
-          <i class="ti ti-brand-chrome"></i>
-        </li>
-        <li class="pc-item pc-hasmenu">
-          <a href="#!" class="pc-link"><span class="pc-micon"><i class="ti ti-menu"></i></span><span class="pc-mtext">Menu
-              levels</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
-          <ul class="pc-submenu">
-            <li class="pc-item"><a class="pc-link" href="#!">Level 2.1</a></li>
-            <li class="pc-item pc-hasmenu">
-              <a href="#!" class="pc-link">Level 2.2<span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
-              <ul class="pc-submenu">
-                <li class="pc-item"><a class="pc-link" href="#!">Level 3.1</a></li>
-                <li class="pc-item"><a class="pc-link" href="#!">Level 3.2</a></li>
-                <li class="pc-item pc-hasmenu">
-                  <a href="#!" class="pc-link">Level 3.3<span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
-                  <ul class="pc-submenu">
-                    <li class="pc-item"><a class="pc-link" href="#!">Level 4.1</a></li>
-                    <li class="pc-item"><a class="pc-link" href="#!">Level 4.2</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li class="pc-item pc-hasmenu">
-              <a href="#!" class="pc-link">Level 2.3<span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
-              <ul class="pc-submenu">
-                <li class="pc-item"><a class="pc-link" href="#!">Level 3.1</a></li>
-                <li class="pc-item"><a class="pc-link" href="#!">Level 3.2</a></li>
-                <li class="pc-item pc-hasmenu">
-                  <a href="#!" class="pc-link">Level 3.3<span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
-                  <ul class="pc-submenu">
-                    <li class="pc-item"><a class="pc-link" href="#!">Level 4.1</a></li>
-                    <li class="pc-item"><a class="pc-link" href="#!">Level 4.2</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li class="pc-item">
-          <a href="../other/sample-page.html" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-brand-chrome"></i></span>
-            <span class="pc-mtext">Sample page</span>
-          </a>
-        </li>
       </ul>
-      <div class="card text-center">
-        <div class="card-body">
-          <img src="<?php echo base_url(); ?>assets-internal/images/img-navbar-card.png" alt="images" class="img-fluid mb-2">
-          <h5>SPOKe</h5>
-          <p>To get more features and components</p>
-          <a href="https://codedthemes.com/item/berry-bootstrap-5-admin-template/" target="_blank"
-          class="btn btn-success">Buy Now</a>
-        </div>
-      </div>
+   
     </div>
   </div>
 </nav>
@@ -204,16 +137,7 @@
 <div class="ms-auto">
   <ul class="list-unstyled">
     <li class="dropdown pc-h-item">
-      <a
-        class="pc-head-link dropdown-toggle arrow-none me-0"
-        data-bs-toggle="dropdown"
-        href="#"
-        role="button"
-        aria-haspopup="false"
-        aria-expanded="false"
-      >
-        <i class="ti ti-mail"></i>
-      </a>
+      
       <div class="dropdown-menu dropdown-notification dropdown-menu-end pc-h-dropdown">
         <div class="dropdown-header d-flex align-items-center justify-content-between">
           <h5 class="m-0">Message</h5>
@@ -301,83 +225,11 @@
               <h6 class="mb-1">Stebin Ben</h6>
               <span>UI/UX Designer</span>
             </div>
-            <a href="#!" class="pc-head-link bg-transparent"><i class="ti ti-power text-danger"></i></a>
+            <a href="<?php echo base_url('logout'); ?>" class="pc-head-link bg-transparent"><i class="ti ti-power text-danger"></i></a>
           </div>
         </div>
-        <ul class="nav drp-tabs nav-fill nav-tabs" id="mydrpTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link active"
-              id="drp-t1"
-              data-bs-toggle="tab"
-              data-bs-target="#drp-tab-1"
-              type="button"
-              role="tab"
-              aria-controls="drp-tab-1"
-              aria-selected="true"
-              ><i class="ti ti-user"></i> Profile</button
-            >
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              id="drp-t2"
-              data-bs-toggle="tab"
-              data-bs-target="#drp-tab-2"
-              type="button"
-              role="tab"
-              aria-controls="drp-tab-2"
-              aria-selected="false"
-              ><i class="ti ti-settings"></i> Setting</button
-            >
-          </li>
-        </ul>
-        <div class="tab-content" id="mysrpTabContent">
-          <div class="tab-pane fade show active" id="drp-tab-1" role="tabpanel" aria-labelledby="drp-t1" tabindex="0">
-            <a href="#!" class="dropdown-item">
-              <i class="ti ti-edit-circle"></i>
-              <span>Edit Profile</span>
-            </a>
-            <a href="#!" class="dropdown-item">
-              <i class="ti ti-user"></i>
-              <span>View Profile</span>
-            </a>
-            <a href="#!" class="dropdown-item">
-              <i class="ti ti-clipboard-list"></i>
-              <span>Social Profile</span>
-            </a>
-            <a href="#!" class="dropdown-item">
-              <i class="ti ti-wallet"></i>
-              <span>Billing</span>
-            </a>
-            <a href="#!" class="dropdown-item">
-              <i class="ti ti-power"></i>
-              <span>Logout</span>
-            </a>
-          </div>
-          <div class="tab-pane fade" id="drp-tab-2" role="tabpanel" aria-labelledby="drp-t2" tabindex="0">
-            <a href="#!" class="dropdown-item">
-              <i class="ti ti-help"></i>
-              <span>Support</span>
-            </a>
-            <a href="#!" class="dropdown-item">
-              <i class="ti ti-user"></i>
-              <span>Account Settings</span>
-            </a>
-            <a href="#!" class="dropdown-item">
-              <i class="ti ti-lock"></i>
-              <span>Privacy Center</span>
-            </a>
-            <a href="#!" class="dropdown-item">
-              <i class="ti ti-messages"></i>
-              <span>Feedback</span>
-            </a>
-            <a href="#!" class="dropdown-item">
-              <i class="ti ti-list"></i>
-              <span>History</span>
-            </a>
-          </div>
-        </div>
+ 
+        
       </div>
     </li>
   </ul>
@@ -400,7 +252,7 @@
                 <h5 class="m-b-10">Home</h5>
               </div>
               <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../dashboard/index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="javascript: void(0)">Dashboard</a></li>
                 <li class="breadcrumb-item" aria-current="page">Home</li>
               </ul>
@@ -455,48 +307,10 @@
           </div>
         </div>
 
-        <div class="col-md-12 col-xl-8">
-          <div class="d-flex align-items-center justify-content-between mb-3">
-            <h5 class="mb-0">Unique Visitor</h5>
-            <ul class="nav nav-pills justify-content-end mb-0" id="chart-tab-tab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="chart-tab-home-tab" data-bs-toggle="pill" data-bs-target="#chart-tab-home"
-                  type="button" role="tab" aria-controls="chart-tab-home" aria-selected="true">Month</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="chart-tab-profile-tab" data-bs-toggle="pill"
-                  data-bs-target="#chart-tab-profile" type="button" role="tab" aria-controls="chart-tab-profile"
-                  aria-selected="false">Week</button>
-              </li>
-            </ul>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="tab-content" id="chart-tab-tabContent">
-                <div class="tab-pane" id="chart-tab-home" role="tabpanel" aria-labelledby="chart-tab-home-tab"
-                  tabindex="0">
-                  <div id="visitor-chart-1"></div>
-                </div>
-                <div class="tab-pane show active" id="chart-tab-profile" role="tabpanel"
-                  aria-labelledby="chart-tab-profile-tab" tabindex="0">
-                  <div id="visitor-chart"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12 col-xl-4">
-          <h5 class="mb-3">Income Overview</h5>
-          <div class="card">
-            <div class="card-body">
-              <h6 class="mb-2 f-w-400 text-muted">This Week Statistics</h6>
-              <h3 class="mb-3">$7,650</h3>
-              <div id="income-overview-chart"></div>
-            </div>
-          </div>
-        </div>
+       
+       
 
-        <div class="col-md-12 col-xl-8">
+        <div class="col-md-12 col-xl-12">
           <h5 class="mb-3">Recent Orders</h5>
           <div class="card tbl-card">
             <div class="card-body">
@@ -604,94 +418,9 @@
             </div>
           </div>
         </div>
-        <div class="col-md-12 col-xl-4">
-          <h5 class="mb-3">Analytics Report</h5>
-          <div class="card">
-            <div class="list-group list-group-flush">
-              <a href="#"
-                class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">Company
-                Finance Growth<span class="h5 mb-0">+45.14%</span></a>
-              <a href="#"
-                class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">Company
-                Expenses Ratio<span class="h5 mb-0">0.58%</span></a>
-              <a href="#"
-                class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">Business
-                Risk Cases<span class="h5 mb-0">Low</span></a>
-            </div>
-            <div class="card-body px-2">
-              <div id="analytics-report-chart"></div>
-            </div>
-          </div>
-        </div>
+        
 
-        <div class="col-md-12 col-xl-8">
-          <h5 class="mb-3">Sales Report</h5>
-          <div class="card">
-            <div class="card-body">
-              <h6 class="mb-2 f-w-400 text-muted">This Week Statistics</h6>
-              <h3 class="mb-0">$7,650</h3>
-              <div id="sales-report-chart"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12 col-xl-4">
-          <h5 class="mb-3">Transaction History</h5>
-          <div class="card">
-            <div class="list-group list-group-flush">
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex">
-                  <div class="flex-shrink-0">
-                    <div class="avtar avtar-s rounded-circle text-success bg-light-success">
-                      <i class="ti ti-gift f-18"></i>
-                    </div>
-                  </div>
-                  <div class="flex-grow-1 ms-3">
-                    <h6 class="mb-1">Order #002434</h6>
-                    <p class="mb-0 text-muted">Today, 2:00 AM</P>
-                  </div>
-                  <div class="flex-shrink-0 text-end">
-                    <h6 class="mb-1">+ $1,430</h6>
-                    <p class="mb-0 text-muted">78%</P>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex">
-                  <div class="flex-shrink-0">
-                    <div class="avtar avtar-s rounded-circle text-primary bg-light-primary">
-                      <i class="ti ti-message-circle f-18"></i>
-                    </div>
-                  </div>
-                  <div class="flex-grow-1 ms-3">
-                    <h6 class="mb-1">Order #984947</h6>
-                    <p class="mb-0 text-muted">5 August, 1:45 PM</P>
-                  </div>
-                  <div class="flex-shrink-0 text-end">
-                    <h6 class="mb-1">- $302</h6>
-                    <p class="mb-0 text-muted">8%</P>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex">
-                  <div class="flex-shrink-0">
-                    <div class="avtar avtar-s rounded-circle text-danger bg-light-danger">
-                      <i class="ti ti-settings f-18"></i>
-                    </div>
-                  </div>
-                  <div class="flex-grow-1 ms-3">
-                    <h6 class="mb-1">Order #988784</h6>
-                    <p class="mb-0 text-muted">7 hours ago</P>
-                  </div>
-                  <div class="flex-shrink-0 text-end">
-                    <h6 class="mb-1">- $682</h6>
-                    <p class="mb-0 text-muted">16%</P>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
+    
       </div>
     </div>
   </div>
@@ -701,14 +430,10 @@
       <div class="row">
         <div class="col-sm my-1">
           <p class="m-0"
-            >Mantis &#9829; crafted by Team <a href="https://themeforest.net/user/codedthemes" target="_blank">Codedthemes</a> Distributed by <a href="https://themewagon.com/">ThemeWagon</a>.</p
+            >SPOKe &copy; 2025</p
           >
         </div>
-        <div class="col-auto my-1">
-          <ul class="list-inline footer-link mb-0">
-            <li class="list-inline-item"><a href="../index.html">Home</a></li>
-          </ul>
-        </div>
+        
       </div>
     </div>
   </footer>

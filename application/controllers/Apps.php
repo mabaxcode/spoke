@@ -118,6 +118,93 @@ class Apps extends CI_Controller {
         $this->load->view('pages/page-21');  
     }
 
+    public function pagesTwentyTwo()
+    {
+        $this->load->view('pages/page-22');  
+    }
+
+    public function pagesTwentyThree()
+    {   
+        $data['done'] = $this->Apps_model->check_drag_drop($this->user_id, '1');
+        $this->load->view('pages/page-23', $data);
+    }
+
+    public function pagesTwentyFour()
+    {   
+        $data['done'] = $this->Apps_model->check_drag_drop($this->user_id, '2');
+
+        $this->load->view('pages/page-24', $data);  
+    }
+
+    public function pagesTwentyFive()
+    {
+        $data['done'] = $this->Apps_model->check_drag_drop($this->user_id, '3');
+        $this->load->view('pages/page-25', $data);
+    }
+
+    function pagesTwentySix()
+    {
+        $data['done'] = $this->Apps_model->check_drag_drop($this->user_id, '4');
+        $this->load->view('pages/page-26', $data);
+    }
+
+    function pagesTwentySeven()
+    {
+        $this->load->view('pages/page-27');
+    }
+
+    public function pagesTwentyEight()
+    {
+         # check aswer is done or not
+        $data['val'] = $this->Apps_model->get_writing_answer($this->user_id, '1');
+        $this->load->view('pages/page-28', $data);
+    }
+
+    public function pagesTwentyNine()
+    {
+        
+        $data['done'] = $this->Apps_model->check_writing_done($this->user_id, '1');
+        $data['val'] = $this->Apps_model->get_writing_answer($this->user_id, '2');
+        if($data['done']){
+            $this->load->view('pages/page-29', $data);
+        }else{
+            $this->load->view('pages/page-28', $data);
+        }
+
+    }
+
+    public function pagesThirty()
+    {
+        $data['done'] = $this->Apps_model->check_writing_done($this->user_id, '2');
+        $data['val'] = $this->Apps_model->get_writing_answer($this->user_id, '3');
+        if($data['done']){
+            $this->load->view('pages/page-30', $data);
+        }else{
+            $this->load->view('pages/page-29', $data);
+        }
+    }
+
+    public function pagesThirtyOne()
+    {
+        $data['done'] = $this->Apps_model->check_writing_done($this->user_id, '3');
+        $data['val'] = $this->Apps_model->get_writing_answer($this->user_id, '4');
+        if($data['done']){
+            $this->load->view('pages/page-31', $data);
+        }else{
+            $this->load->view('pages/page-30', $data);
+        }
+    }
+
+    public function pagesThirtyTwo()
+    {
+        $this->load->view('pages/page-32');
+    }
+
+    public function pageEnd()
+    {
+        $this->load->view('pages/page-end');
+    }
+
     function save_answer($data=false)
     {
         $post = $this->input->post();
@@ -139,5 +226,72 @@ class Apps extends CI_Controller {
         }
 
     }
+
+    function insertLogActivityTrue() { 
+        $post = $this->input->post();
+        $userAnswer = $post['userAnswer'];
+        $type = $post['type'];
+
+        # answer is array
+        if(is_array($userAnswer)){
+            $userAnswer = implode(", ", $userAnswer);
+        }
+
+        $logCount = $this->Apps_model->count_logs($this->user_id);
+
+        $totalLogs = $logCount + 1;
+
+        $done = $this->Apps_model->done_drag_drop($this->user_id, $type);
+
+        $this->Apps_model->insert_log($this->user_id, $userAnswer, $totalLogs, "BETUL", $type);
+        
+    }
+
+
+    function insertLogActivityWrong() { 
+        $post = $this->input->post();
+        $userAnswer = $post['userAnswer'];
+        $type = $post['type'];
+
+        # answer is array
+        if(is_array($userAnswer)){
+            $userAnswer = implode(", ", $userAnswer);
+        }
+
+        // echo "<pre>"; print_r($userAnswer); echo "</pre>"; exit;
+        # count how many logs for this user
+        $logCount = $this->Apps_model->count_logs($this->user_id);
+
+        $totalLogs = $logCount + 1;
+
+        $this->Apps_model->insert_log($this->user_id, $userAnswer, $totalLogs, "SALAH", $type);
+    }
+
+    function save_writing_answer() {
+        $post = $this->input->post();
+        // echo "<pre>"; print_r($post); echo "</pre>"; exit;
+        $updateAnswer = $this->Apps_model->update_writing_answer($this->user_id, $post);
+
+        if($updateAnswer == true){
+            echo json_encode([
+                "success" => true,
+                "message" => "Success"
+            ]);
+        } else {
+            echo json_encode([
+                "success" => false,
+                "message" => "Gagal untuk simpan jawapan"
+            ]);
+        }
+        
+    }
+
+    function hantar() {
+        $this->Apps_model->save_hantar($this->user_id);
+
+        // Redirect back to login
+        redirect('userlogout');
+    }
+    
     
 }

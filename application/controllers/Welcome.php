@@ -8,7 +8,12 @@ class Welcome extends CI_Controller {
 
         // Redirect logged-in users away from login page
         if ($this->session->userdata('logged_in')) {
-            redirect('home');
+            if($this->session->userdata('role') == 'admin'){
+                redirect('admin/answers');
+            }else{
+                redirect('home');
+            }
+            
         }
     }
 

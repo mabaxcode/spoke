@@ -108,9 +108,12 @@ font-size: 20px;
           </div> -->
 
           
-
+      <?php if($this->session->userdata('is_submitted') == '1'): ?>
+          <a href="#" class="btn px-'5 custom-btn">JAWAPAN TELAH DIHANTAR, SILA TUNGGU KEPUTUSAN ANDA</a>
+      <?php else: ?>
           <a href="<?php echo base_url('apps');?>" class="btn px-5 custom-btn">MULA</a>
         </div>
+      <?php endif; ?>
 
       </div>
     </div>

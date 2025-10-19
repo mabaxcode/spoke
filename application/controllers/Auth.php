@@ -36,7 +36,7 @@ class Auth extends CI_Controller {
                 'logged_in' => true
             ]);
 
-            redirect('admin');
+            redirect('admin/answers');
         } else {
             $this->session->set_flashdata('error', 'Invalid username or password');
             redirect('auth');
@@ -55,7 +55,9 @@ class Auth extends CI_Controller {
                 'user_id'      => $user->id,
                 'username'     => $user->username,
                 'name'         => $user->name,
-                'logged_in'    => true
+                'logged_in'    => true,
+                'is_submitted' => $user->is_submitted,
+                'role'      => $user->role,
             ]);
 
             $questionCreated = $this->Apps_model->created_question($user->id);
