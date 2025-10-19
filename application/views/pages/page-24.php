@@ -263,12 +263,12 @@
             // alert("✅ Betul! Ayat lengkap: Ibu memasak ayam goreng di dapur.");
             alert("✅ Jawapan Disimpan!");
             insert_log(userAnswer);
-            window.location.href = "<?php echo base_url('apps/pagesTwentyFour');?>";
+            window.location.href = "<?php echo base_url('apps/pagesTwentyFive');?>";
             } else {
             // alert("❌ Cuba lagi! Jawapan Salah.");
             alert("✅ Jawapan Disimpan!");
             insert_log_wrong(userAnswer);
-            window.location.href = "<?php echo base_url('apps/pagesTwentyFour');?>";
+            window.location.href = "<?php echo base_url('apps/pagesTwentyFive');?>";
             // location.reload();
             }
         }

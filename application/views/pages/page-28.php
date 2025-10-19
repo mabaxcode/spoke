@@ -157,14 +157,14 @@
     <img src="<?php echo base_url('img/w1.png')?>" alt="Abang membaca buku" width="400">
   </div>
 
-    <textarea class="custom-input" rows="3" cols="80" placeholder="Tulis jawapan anda di sini..."><?php echo isset($val) ? $val->answer : ''; ?></textarea>
+    <textarea class="custom-input" id="userAnswer-w1" rows="3" cols="80" placeholder="Tulis jawapan anda di sini..."><?php echo isset($val) ? $val->answer : ''; ?></textarea>
 
 
 
         <div class="d-flex justify-content-between mt-auto mb-0 px-4">
     <a href="<?php echo base_url('apps/pagesTwentyTwo');?>" class="btn px-5 custom-btn">SEBELUMNYA</a>
 
-        <a href="<?php echo base_url('apps/pagesTwentyNine');?>" class="btn px-5 custom-btn">SETERUSNYA</a>
+        <a href="javascript:void(0);" class="btn px-5 custom-btn" id="nextBtn">SETERUSNYA</a>
 
   </div>
 
@@ -201,34 +201,69 @@
     //     });
 
 
-    const textarea = document.querySelector('.custom-input');
-  let typingTimer; // Timer identifier
-  const doneTypingInterval = 1500; // Time in ms (1.5 seconds after user stops typing)
+    // function next_writing() {
+    $(document).ready(function() {
+      $('#nextBtn').on('click', function(e) {
+        e.preventDefault();
+  
+        const textarea = document.querySelector('#userAnswer-w1');
+        const answer = textarea.value.trim();
 
-  textarea.addEventListener('input', function () {
-    clearTimeout(typingTimer); // reset timer on every keypress
-    typingTimer = setTimeout(saveAnswer, doneTypingInterval);
-  });
-
-  function saveAnswer() {
-    const answer = textarea.value.trim();
-    console.log("User stopped typing. Answer:", answer);
-    // if (answer) {
-      console.log("Saving Answer:", answer);
-      $.ajax({
-        url: "<?php echo base_url('apps/save_writing_answer');?>",
-        type: "POST",
-        data: { answer: answer, type: '1' },
-        dataType: "json",
-        success: function (response) {
-          console.log("Answer saved:", response);
-        },
-        error: function () {
-          console.error("Failed to save answer");
+        if(answer === "") {
+            alert("Sila masukkan jawapan anda sebelum meneruskan.");
+            return;
         }
+
+        console.log("Next Button Clicked. Answer:", answer);
+        // Save the answer using AJAX
+        $.ajax({
+          url: "<?php echo base_url('apps/save_writing_answer');?>",
+          type: "POST",
+          data: {answer:answer, type: '1'},
+          dataType: "json",
+          success: function (response) {
+              // Redirect to next page after saving
+              window.location.href = "<?php echo base_url('apps/pagesTwentyNine');?>";
+          },
+          error: function () {
+              // Still redirect even if saving fails
+              window.location.href = "<?php echo base_url('apps/pagesTwentyNine');?>";
+          }
       });
+
+        });
+    });
     // }
-  }
+
+
+  //   const textarea = document.querySelector('.custom-input');
+  // let typingTimer; // Timer identifier
+  // const doneTypingInterval = 1500; // Time in ms (1.5 seconds after user stops typing)
+
+  // textarea.addEventListener('input', function () {
+  //   clearTimeout(typingTimer); // reset timer on every keypress
+  //   typingTimer = setTimeout(saveAnswer, doneTypingInterval);
+  // });
+
+  // function saveAnswer() {
+  //   const answer = textarea.value.trim();
+  //   console.log("User stopped typing. Answer:", answer);
+  //   // if (answer) {
+  //     console.log("Saving Answer:", answer);
+  //     $.ajax({
+  //       url: "<?php echo base_url('apps/save_writing_answer');?>",
+  //       type: "POST",
+  //       data: { answer: answer, type: '1' },
+  //       dataType: "json",
+  //       success: function (response) {
+  //         console.log("Answer saved:", response);
+  //       },
+  //       error: function () {
+  //         console.error("Failed to save answer");
+  //       }
+  //     });
+  //   // }
+  // }
 
 
   </script>
