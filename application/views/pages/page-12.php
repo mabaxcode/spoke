@@ -176,6 +176,7 @@
 </body>
 </html>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   // Select all option buttons except the submit button
   const optionButtons = document.querySelectorAll('.options button:not(.submit-btn)');
@@ -220,8 +221,24 @@
 
     // console.log("Selected Button ID:", answerId);
     console.log("Selected Button Value:", answerValue);
-    alert ("Selected Button Value (for testing only): "+ answerValue);
-    window.location.href = "<?php echo base_url('apps/pagesThirteen'); ?>";
+    // alert ("Selected Button Value (for testing only): "+ answerValue);
+   
+    // save answer
+    const base_url = "<?php echo base_url(); ?>";
+    $.ajax({
+        url: base_url + "apps/save_answer",
+        type: "POST",
+        data: {answer_id:answerValue,answer_text:answerText,qtye:"2"},
+        dataType: "json",
+        success: function (response) {
+            if (response.success) {
+              window.location.href = "<?php echo base_url('apps/pagesThirteen'); ?>";
+            } else {
+                alert (response.message);
+            }
+        },
+    });
+
     // console.log("Selected Answer Text:", answerText);
   });
 </script>

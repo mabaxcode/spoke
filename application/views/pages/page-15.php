@@ -69,7 +69,7 @@
 <body>
   <div class="d-flex justify-content-center align-items-center full-height">
     <div class="card bg-dark text-white border-0" style="width: 1200px; height: 700px; border-radius: 20px; overflow: hidden;">
-      <img src="<?php echo base_url('img/14.png')?>" class="card-img" alt="Paris Background" style="height: 100%;">
+      <img src="<?php echo base_url('img/15.png')?>" class="card-img" alt="Paris Background" style="height: 100%;">
       <div class="card-img-overlay d-flex flex-column justify-content-between text-center">
         
         <!-- Bottom content -->
@@ -101,8 +101,8 @@
    
 
         <div class="d-flex justify-content-between mt-auto mb-0 px-4">
-    <a href="<?php echo base_url('apps/pagesThirteen');?>" class="btn px-5 custom-btn">SEBELUMNYA</a>
-    <a href="<?php echo base_url('apps/pagesFifteen');?>" class="btn px-5 custom-btn">SETERUSNYA</a>
+    <a href="<?php echo base_url('apps/pagesFourteen');?>" class="btn px-5 custom-btn">SEBELUMNYA</a>
+    <a href="<?php echo base_url('apps/pagesSixteen');?>" class="btn px-5 custom-btn">SETERUSNYA</a>
   </div>
 
 

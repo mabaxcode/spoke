@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">
   <script src="<?php echo base_url()?>/assets/js/bootstrap.bundle.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <style>
     body, html {
@@ -17,26 +16,6 @@
     }
     .full-height {
       height: 100vh; /* Full screen height */
-    }
-     .top-buttons {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      gap: 10px;
-    }
-
-    .top-buttons .btn {
-      background-color: black !important;
-      color: yellow !important;
-      border: 2px solid yellow !important;
-      font-size: 16px;
-      padding: 8px 12px;
-    }
-
-    .top-buttons .btn:hover {
-      background-color: yellow !important;
-      color: black !important;
     }
     .custom-input {
 /*      border-radius: 20px;        /* make rounded corners */*/
@@ -76,8 +55,8 @@
   }
 
   .question-header {
-    background-color: #ffcf01;
-    color: black;
+    background-color: #ff6b6b;
+    color: white;
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px;
@@ -88,12 +67,32 @@
   .options {
     padding: 10px;
   }
+  .top-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .top-buttons .btn {
+      background-color: black !important;
+      color: yellow !important;
+      border: 2px solid yellow !important;
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+
+    .top-buttons .btn:hover {
+      background-color: yellow !important;
+      color: black !important;
+    }
 
   .options button {
     display: block;
     width: 100%;
     margin: 10px 0;
-    background-color: #f4faff;
+    background-color: #6ec1ff;
     border: none;
     border-radius: 10px;
     padding: 12px;
@@ -142,41 +141,51 @@
 <body>
   <div class="d-flex justify-content-center align-items-center full-height">
     <div class="card bg-dark text-white border-0" style="width: 1200px; height: 700px; border-radius: 20px; overflow: hidden;">
-      <img src="<?php echo base_url('img/13.png')?>" class="card-img" alt="Paris Background" style="height: 100%;">
+      <img src="<?php echo base_url('img/11.png')?>" class="card-img" alt="Paris Background" style="height: 100%;">
       <div class="card-img-overlay d-flex flex-column justify-content-between text-center">
 
 
         <div class="center-container">
   <div class="question-card">
-    <div class="question-header">Apakah maksud Predikat?</div>
+    <div class="question-header">Apakah maksud S, P, O dan Ke dalam teknik SPOKe?</div>
     <div class="options">
-      <button id="option1" data-value="A" style="text-align: left;">A. Predikat ialah bahagian ayat yang menerangkan perbuatan atau sifat subjek. </button>
-      <button id="option2" data-value="B" style="text-align: left;">B. Predikat ialah nama orang, haiwan atau benda.</button>
-      <button id="option3" data-value="C" style="text-align: left;">C. Predikat ialah masa sesuatu perkara berlaku.</button>
-      <button id="option4" data-value="D" style="text-align: left;">D. Predikat ialah tempat sesuatu berlaku.</button>
-      <button id="submitBtn" class="submit-btn" style="background-color: #179cff;">Hantar</button>
+      <button id="option1" data-value="A" style="text-align: left;">S = Siapa, P=Perbuatan O=Orang Ke= Keterangan</button>
+      <button id="option2" data-value="B" style="text-align: left;">S= Saya P= Perbuatan O=Objek Ke=Keterangan</button>
+      <button id="option3" data-value="C" style="text-align: left;">S= Siapa P=Perbuatan O= Objek Ke= Keterangan</button>
+      <button id="option4" data-value="D" style="text-align: left;">S= Siapa P= Perbincangan O= Objek Ke= Keterangan</button>
+      <button id="submitBtn" class="submit-btn" style="background-color: #ff6b6b;">Hantar</button>
       <small style="font-size: 0.8rem; color: black; font-family: sans-serif;">Your name will be shared</small>
     </div>
   </div>
 </div>
 
 
+
+      <?php /*
+        <div class="mt-auto mb-0" align="right">
+          <a href="<?php echo base_url('apps/pagesTwelve');?>" class="btn px-5 custom-btn">SETERUSNYA</a>
+        </div>
+        */?>
+
 <div class="top-buttons">
         <a href="<?php echo base_url();?>" class="btn btn-sm">🏠 Home</a>
           <a href="<?php echo base_url('userlogout');?>" class="btn btn-sm">🚪 Log Keluar</a>
         </div>
 
-<div class="d-flex justify-content-between mt-auto mb-0 px-4">
-    <a href="<?php echo base_url('apps/pagesTwelve');?>" class="btn px-5 custom-btn">SEBELUMNYA</a>
+
+   
+
+        <div class="d-flex justify-content-between mt-auto mb-0 px-4">
+    <a href="<?php echo base_url('apps/pagesEighteen');?>" class="btn px-5 custom-btn">SEBELUMNYA</a>
   </div>
+
+
 
       </div>
     </div>
   </div>
 </body>
 </html>
-
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   // Select all option buttons except the submit button
@@ -225,20 +234,25 @@
     // alert ("Selected Button Value (for testing only): "+ answerValue);
 
     const base_url = "<?php echo base_url(); ?>";
+
+    // save answer
     $.ajax({
         url: base_url + "apps/save_answer",
         type: "POST",
-        data: {answer_id:answerValue,answer_text:answerText,qtye:"3"},
+        data: {answer_id:answerValue,answer_text:answerText,qtye:"spoke01"},
         dataType: "json",
         success: function (response) {
             if (response.success) {
-              window.location.href = "<?php echo base_url('apps/pagesFourteen'); ?>";
+                window.location.href = "<?php echo base_url('apps/pagesTwenty'); ?>";
+                // swal("Berjaya!", response.message, "success").then(() => {
+                //     window.location.href = base_url + 'app/permohonan';
+                // });
             } else {
                 alert (response.message);
+                // swal("Error!", response.message, "error");
             }
         },
     });
-
     // console.log("Selected Answer Text:", answerText);
   });
 </script>
@@ -247,7 +261,7 @@
 <style>
   /* Active state for option button */
   .options button.active {
-    background-color: #a8a8a8 !important; /* Highlight color */
+    background-color: #4aa9ff !important; /* Highlight color */
     color: #000 !important;               /* Optional text color change */
     font-weight: bold;
     transform: scale(1.05);

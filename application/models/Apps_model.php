@@ -32,7 +32,19 @@ class Apps_model extends CI_Model {
             'user_id'           => $this->session->userdata('user_id'),
             'created_at'        => date('Y-m-d H:i:s'),
         ];
-        $this->db->insert('question_three', $data_q3);
+        $this->db->insert('question_three', $data_q3);  
+
+        $data_q4 = [
+            'user_id'           => $this->session->userdata('user_id'),
+            'created_at'        => date('Y-m-d H:i:s'),
+        ];
+        $this->db->insert('question_spoke_one', $data_q4);
+
+        $data_q5 = [
+            'user_id'           => $this->session->userdata('user_id'),
+            'created_at'        => date('Y-m-d H:i:s'),
+        ];
+        $this->db->insert('question_spoke_two', $data_q5);
 
         # all created !
         $data_created = [
@@ -66,7 +78,13 @@ class Apps_model extends CI_Model {
             case '3':
                 $tableName = "question_three";
                 break;
-            
+            case 'spoke01':
+                $tableName = "question_spoke_one";
+                break;
+            case 'spoke02':
+                $tableName = "question_spoke_two";
+                break;
+        
             default:
                 # code...
                 break;

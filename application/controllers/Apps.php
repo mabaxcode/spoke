@@ -80,8 +80,42 @@ class Apps extends CI_Controller {
 
     public function pagesFourteen()
     {
-        // $this->load->view('pages/page-14');   
-        echo "coming soon";
+        $this->load->view('pages/page-14');  
+    }
+
+    public function pagesFifteen()
+    {
+        $this->load->view('pages/page-15');  
+    }
+
+    public function pagesSixteen()
+    {
+        $this->load->view('pages/page-16');  
+    }
+
+    public function pagesSeventeen()
+    {
+        $this->load->view('pages/page-17');  
+    }
+
+    public function pagesEighteen()
+    {
+        $this->load->view('pages/page-18');  
+    }
+
+    public function pagesNineteen()
+    {
+        $this->load->view('pages/page-19');  
+    }
+
+    public function pagesTwenty()
+    {
+        $this->load->view('pages/page-20');  
+    }
+
+    public function pagesTwentyOne()
+    {
+        $this->load->view('pages/page-21');  
     }
 
     function save_answer($data=false)
