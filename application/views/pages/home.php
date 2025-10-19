@@ -107,13 +107,33 @@ font-size: 20px;
             </div>
           </div> -->
 
-          
-      <?php if($this->session->userdata('is_submitted') == '1'): ?>
-          <a href="#" class="btn px-'5 custom-btn">JAWAPAN TELAH DIHANTAR, SILA TUNGGU KEPUTUSAN ANDA</a>
+      <?php /*
+      <?php if($this->session->userdata('is_submitted') == '1' && $this->session->userdata('is_reviewed') == '0'): ?>
+          <a href="#" class="btn px-5 custom-btn">JAWAPAN TELAH DIHANTAR, SILA TUNGGU KEPUTUSAN ANDA</a>
+      <?php else if($this->session->userdata('is_submitted') == '1' && $this->session->userdata('is_reviewed') == '1'): ?>
+          <a href="#" class="btn px-5 custom-btn">JAWAPAN ANDA TELAH DISEMAK. TERIMA KASIH!</a>
       <?php else: ?>
-          <a href="<?php echo base_url('apps');?>" class="btn px-5 custom-btn">MULA</a>
+          <div class="d-flex justify-content-center mb-3">
+            <a href="<?php echo base_url('apps');?>" class="btn px-5 custom-btn">MULA</a>
         </div>
       <?php endif; ?>
+      */?>
+
+      <?php 
+$is_submitted = (int) $this->session->userdata('is_submitted');
+$is_reviewed = (int) $this->session->userdata('is_reviewed');
+?>
+
+<?php if ($is_submitted === 1 && $is_reviewed === 0): ?>
+  <a href="#" class="btn px-5 custom-btn">JAWAPAN TELAH DIHANTAR, SILA TUNGGU KEPUTUSAN ANDA</a>
+<?php elseif ($is_submitted === 1 && $is_reviewed === 1): ?>
+  <a href="<?php echo base_url('apps/results/' . $this->session->userdata('user_id')); ?>" class="btn px-5 custom-btn">JAWAPAN ANDA TELAH DISEMAK. LIHAT KEPUTUSAN !</a>
+<?php else: ?>
+  <div class="d-flex justify-content-center mb-3">
+    <a href="<?php echo base_url('apps');?>" class="btn px-5 custom-btn">MULA</a>
+  </div>
+<?php endif; ?>
+
 
       </div>
     </div>

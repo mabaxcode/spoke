@@ -58,6 +58,7 @@ class Auth extends CI_Controller {
                 'logged_in'    => true,
                 'is_submitted' => $user->is_submitted,
                 'role'      => $user->role,
+                'is_reviewed'  => $user->is_reviewed
             ]);
 
             $questionCreated = $this->Apps_model->created_question($user->id);

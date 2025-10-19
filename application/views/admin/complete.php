@@ -311,9 +311,9 @@
                         ?>
                       <!-- </td> -->
                       <td><span class="d-flex align-items-center gap-2"><i
-                            class="fas fa-circle text-success f-10 m-r-5"></i>Jawapan Dihantar</span>
+                            class="fas fa-circle text-success f-10 m-r-5"></i>Semakan Selesai</span>
                       </td>
-                      <td class="text-end"><a class="btn btn-primary btn-sm" style="cursor: pointer; color: white;" href="<?php echo base_url('admin/answers_details/' . $student->id); ?>">Semak Jawapan</a></td>
+                      <td class="text-end"><a class="btn btn-primary btn-sm" style="cursor: pointer; color: white;" href="<?php echo base_url('admin/complete_view/' . $student->id); ?>">Lihat Butiran</a></td>
                     </tr>
                     <?php endforeach; ?>
                     <!-- <tr>

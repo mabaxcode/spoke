@@ -372,12 +372,12 @@
                                 <b>Jawapan Pelajar : </b>
                                 <div class="p-3 color-block bg-teal-100" data-clipboard-text="bg-teal-100"><?php echo writing_answer($student_id, '1'); ?></div>
                                 <b>Ulasan : <br>
-                                <textarea name="comment" id="comment-1" cols="30" rows="3" class="form-control"><?php echo $writing1['comment']; ?></textarea>
+                                <textarea name="comment" id="comment-1" cols="30" rows="3" class="form-control" disabled><?php echo $writing1['comment']; ?></textarea>
                                 </b>
                             </td>
                             <td style="vertical-align: bottom;">
-                              <a class="btn btn-secondary mb-2 d-flex justify-content-center save-comment" data-init="<?php echo $student_id; ?>" data-type="1" style="color:white;"> Simpan Ulasan</a>
-                              <select name="score" id="score" class="form-control" onchange="updateScore(this.value, '<?php echo $student_id; ?>', '1')">
+                              
+                              <select name="score" id="score" class="form-control" disabled onchange="updateScore(this.value, '<?php echo $student_id; ?>', '1')">
                                 <option value="">Pilih Keputusan</option>
                                 <option value="Betul" <?php echo ($writing1['score'] == 'Betul') ? 'selected' : ''; ?>>Betul</option>
                                 <option value="Salah" <?php echo ($writing1['score'] == 'Salah') ? 'selected' : ''; ?>>Salah</option>
@@ -394,12 +394,12 @@
                                 <b>Jawapan Pelajar :</b>
                                 <div class="p-3 color-block bg-teal-100" data-clipboard-text="bg-teal-100"><?php echo writing_answer($student_id, '2'); ?></div>
                                 <b>Ulasan : <br>
-                                <textarea name="comment" id="comment-2" cols="30" rows="3" class="form-control"><?php echo $writing2['comment']; ?></textarea>
+                                <textarea name="comment" id="comment-2" cols="30" rows="3" class="form-control" disabled><?php echo $writing2['comment']; ?></textarea>
                                 </b>
                             </td>
                             <td style="vertical-align: bottom;">
-                              <a class="btn btn-secondary mb-2 d-flex justify-content-center save-comment" data-init="<?php echo $student_id; ?>" data-type="2" style="color:white;"> Simpan Ulasan</a>
-                              <select name="score" id="score" class="form-control" onchange="updateScore(this.value, '<?php echo $student_id; ?>', '2')">
+                              
+                              <select name="score" id="score" class="form-control" disabled onchange="updateScore(this.value, '<?php echo $student_id; ?>', '2')">
                                 <option value="">Pilih Keputusan</option>
                                 <option value="Betul" <?php echo ($writing2['score'] == 'Betul') ? 'selected' : ''; ?>>Betul</option>
                                 <option value="Salah" <?php echo ($writing2['score'] == 'Salah') ? 'selected' : ''; ?>>Salah</option>
@@ -416,12 +416,12 @@
                                 <b>Jawapan Pelajar :</b>
                                 <div class="p-3 color-block bg-teal-100" data-clipboard-text="bg-teal-100"><?php echo writing_answer($student_id, '3'); ?></div>
                                 <b>Ulasan : <br>
-                                <textarea name="comment" id="comment-3" cols="30" rows="3" class="form-control"><?php echo $writing3['comment']; ?></textarea>
+                                <textarea name="comment" id="comment-3" cols="30" rows="3" class="form-control" disabled><?php echo $writing3['comment']; ?></textarea>
                                 </b>
                             </td>
                             <td style="vertical-align: bottom;">
-                              <a class="btn btn-secondary mb-2 d-flex justify-content-center save-comment" data-init="<?php echo $student_id; ?>" data-type="3" style="color:white;"> Simpan Ulasan</a>
-                              <select name="score" id="score" class="form-control" onchange="updateScore(this.value, '<?php echo $student_id; ?>', '3')">
+                              
+                              <select name="score" id="score" class="form-control" disabled onchange="updateScore(this.value, '<?php echo $student_id; ?>', '3')">
                                 <option value="">Pilih Keputusan</option>
                                 <option value="Betul" <?php echo ($writing3['score'] == 'Betul') ? 'selected' : ''; ?>>Betul</option>
                                 <option value="Salah" <?php echo ($writing3['score'] == 'Salah') ? 'selected' : ''; ?>>Salah</option>
@@ -439,12 +439,12 @@
                                 <b>Jawapan Pelajar :</b>
                                 <div class="p-3 color-block bg-teal-100" data-clipboard-text="bg-teal-100"><?php echo writing_answer($student_id, '4'); ?></div>
                                 <b>Ulasan : <br>
-                                <textarea name="comment" id="comment-4" cols="30" rows="3" class="form-control"><?php echo $writing4['comment']; ?></textarea>
+                                <textarea name="comment" id="comment-4" cols="30" rows="3" class="form-control" disabled><?php echo $writing4['comment']; ?></textarea>
                                 </b>
                             </td>
                             <td style="vertical-align: bottom;">
-                              <a class="btn btn-secondary mb-2 d-flex justify-content-center save-comment" data-init="<?php echo $student_id; ?>" data-type="4" style="color:white;"> Simpan Ulasan</a>
-                              <select name="score" id="score" class="form-control" onchange="updateScore(this.value, '<?php echo $student_id; ?>', '4')">
+                              
+                              <select name="score" id="score" class="form-control" disabled onchange="updateScore(this.value, '<?php echo $student_id; ?>', '4')">
                                 <option value="">Pilih Keputusan</option>
                                 <option value="Betul" <?php echo ($writing4['score'] == 'Betul') ? 'selected' : ''; ?>>Betul</option>
                                 <option value="Salah" <?php echo ($writing4['score'] == 'Salah') ? 'selected' : ''; ?>>Salah</option>
@@ -456,7 +456,7 @@
                     </table>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <a class="btn btn-primary mt-3 selesai-semak" data-init="<?php echo $student_id; ?>" style="color:white;">Selesai</a>
+                    <!-- <a class="btn btn-primary mt-3 selesai-semak" data-init="<?php echo $student_id; ?>" style="color:white;">Selesai</a> -->
                 </div>
             </div>
           </div>

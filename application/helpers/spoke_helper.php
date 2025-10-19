@@ -594,3 +594,26 @@ function status_span_class_val($user_id, $q) {
 
     return false;
 }
+
+function writing_answer($user_id, $type)
+{
+    $ci = load_instance();
+    $ci->load->database();
+
+    $ci->db->select('*');
+    $ci->db->where(array('user_id' => $user_id, 'type' => $type));
+   
+    // if ($order_latest !== false) {
+    //     $ci->db->order_by($order_latest, 'desc');
+    // }
+
+    $query = $ci->db->get('writing_answers');
+
+    if ($query->num_rows() > 0) {
+        $row = $query->row_array();
+        // $row['correct'];
+        return $row['answer'];
+    }
+
+    return false;
+}   

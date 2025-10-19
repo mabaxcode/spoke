@@ -243,7 +243,7 @@ class Apps extends CI_Controller {
 
         $done = $this->Apps_model->done_drag_drop($this->user_id, $type);
 
-        $this->Apps_model->insert_log($this->user_id, $userAnswer, $totalLogs, "BETUL", $type);
+        $this->Apps_model->insert_log($this->user_id, $userAnswer, $totalLogs, "Betul", $type);
         
     }
 
@@ -264,7 +264,7 @@ class Apps extends CI_Controller {
 
         $totalLogs = $logCount + 1;
 
-        $this->Apps_model->insert_log($this->user_id, $userAnswer, $totalLogs, "SALAH", $type);
+        $this->Apps_model->insert_log($this->user_id, $userAnswer, $totalLogs, "Salah", $type);
     }
 
     function save_writing_answer() {
@@ -291,6 +291,21 @@ class Apps extends CI_Controller {
 
         // Redirect back to login
         redirect('userlogout');
+    }
+
+    function results($student_id)
+    {
+        $data['student'] = $this->db->get_where('student', array('id' => $student_id))->row();
+
+        $data['student_id'] = $student_id;
+        $data['name'] = $data['student']->name;
+
+        $data['writing1'] = get_any_table_row(array('user_id' => $student_id, 'type' => '1'), 'writing_answers');
+        $data['writing2'] = get_any_table_row(array('user_id' => $student_id, 'type' => '2'), 'writing_answers');
+        $data['writing3'] = get_any_table_row(array('user_id' => $student_id, 'type' => '3'), 'writing_answers');
+        $data['writing4'] = get_any_table_row(array('user_id' => $student_id, 'type' => '4'), 'writing_answers');
+
+        $this->load->view('pages/result', $data);
     }
     
     

@@ -40,7 +40,7 @@
 </div>
 <!-- [ Pre-loader ] End -->
  <!-- [ Sidebar Menu ] start -->
-<nav class="pc-sidebar">
+<nav class="pc-sidebar pc-sidebar-hide">
   <div class="navbar-wrapper">
     <div class="m-header">
       <a href="#" class="b-brand text-primary">
@@ -54,14 +54,18 @@
         <!-- <li class="pc-item">
           <a href="#" class="pc-link">
             <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
-            <span class="pc-mtext">Dashboard</span>
+            <span class="pc-mtext">Keputusan</span>
           </a>
         </li> -->
 
+        <li class="pc-item pc-caption">
+          <label>Menu</label>
+          <i class="ti ti-dashboard"></i>
+        </li>
         <li class="pc-item">
           <a href="<?php echo base_url('admin/answers');?>" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-color-swatch"></i></span>
-            <span class="pc-mtext">Jawapan Perlu Disemak</span>
+            <span class="pc-micon"><i class="ti ti-typography"></i></span>
+            <span class="pc-mtext">Jawapan Murid</span>
           </a>
         </li>
         <li class="pc-item">
@@ -72,15 +76,8 @@
         </li>
         <li class="pc-item">
           <a href="<?php echo base_url('admin/senarai_pelajar');?>" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-color-swatch"></i></span>
+            <span class="pc-micon"><i class="ti ti-plant-2"></i></span>
             <span class="pc-mtext">Senarai Pelajar</span>
-          </a>
-        </li>
-
-        <li class="pc-item">
-          <a href="<?php echo base_url('admin/complete');?>" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-color-swatch"></i></span>
-            <span class="pc-mtext">Semakan Selesai</span>
           </a>
         </li>
 
@@ -95,16 +92,7 @@
 <div class="me-auto pc-mob-drp">
   <ul class="list-unstyled">
     <!-- ======= Menu collapse Icon ===== -->
-    <li class="pc-h-item pc-sidebar-collapse">
-      <a href="#" class="pc-head-link ms-0" id="sidebar-hide">
-        <i class="ti ti-menu-2"></i>
-      </a>
-    </li>
-    <li class="pc-h-item pc-sidebar-popup">
-      <a href="#" class="pc-head-link ms-0" id="mobile-collapse">
-        <i class="ti ti-menu-2"></i>
-      </a>
-    </li>
+    
     <li class="dropdown pc-h-item d-inline-flex d-md-none">
       <a
         class="pc-head-link dropdown-toggle arrow-none m-0"
@@ -116,21 +104,9 @@
       >
         <i class="ti ti-search"></i>
       </a>
-      <div class="dropdown-menu pc-h-dropdown drp-search">
-        <form class="px-3">
-          <div class="form-group mb-0 d-flex align-items-center">
-            <i data-feather="search"></i>
-            <input type="search" class="form-control border-0 shadow-none" placeholder="Search here. . .">
-          </div>
-        </form>
-      </div>
+      
     </li>
-    <li class="pc-h-item d-none d-md-inline-flex">
-      <form class="header-search">
-        <i data-feather="search" class="icon-search"></i>
-        <input type="search" class="form-control" placeholder="Search here. . .">
-      </form>
-    </li>
+    
   </ul>
 </div>
 <!-- [Mobile Media Block end] -->
@@ -203,17 +179,8 @@
       </div>
     </li>
     <li class="dropdown pc-h-item header-user-profile">
-      <a
-        class="pc-head-link dropdown-toggle arrow-none me-0"
-        data-bs-toggle="dropdown"
-        href="#"
-        role="button"
-        aria-haspopup="false"
-        data-bs-auto-close="outside"
-        aria-expanded="false"
-      >
-        <img src="<?php echo base_url(); ?>assets-internal/images/user/avatar-2.jpg" alt="user-image" class="user-avtar">
-        <span>Admin</span>
+      
+       
       </a>
       <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
         <div class="dropdown-header">
@@ -248,14 +215,10 @@
         <div class="page-block">
           <div class="row align-items-center">
             <div class="col-md-12">
-              <!-- <div class="page-header-title">
-                <h5 class="m-b-10">Home</h5>
-              </div> -->
-              <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="javascript: void(0)">Maklumat Jawapan</a></li>
-                <!-- <li class="breadcrumb-item" aria-current="page">Home</li> -->
-              </ul>
+              <div class="page-header-title">
+                <h5 class="m-b-10">Maklumat Keputusan</h5>
+              </div>
+             
             </div>
           </div>
         </div>
@@ -283,7 +246,7 @@
                     <thead>
                         <tr>
                         <th width="30%">Soalan</th>
-                        <th width="50%">Jawapan Pelajar</th>
+                        <th width="50%">Jawapan Yang Dihantar</th>
                         <!-- <th>Jawapan Betul</th> -->
                         <th>Status</th>
                         </tr>
@@ -369,15 +332,15 @@
                               
                             </td>
                             <td>
-                                <b>Jawapan Pelajar : </b>
+                                <b>Jawapan Yang Dihantar : </b>
                                 <div class="p-3 color-block bg-teal-100" data-clipboard-text="bg-teal-100"><?php echo writing_answer($student_id, '1'); ?></div>
-                                <b>Ulasan : <br>
-                                <textarea name="comment" id="comment-1" cols="30" rows="3" class="form-control"><?php echo $writing1['comment']; ?></textarea>
+                                <b>Ulasan Guru: <br>
+                                <textarea name="comment" id="comment-1" cols="30" rows="3" class="form-control" disabled><?php echo $writing1['comment']; ?></textarea>
                                 </b>
                             </td>
                             <td style="vertical-align: bottom;">
-                              <a class="btn btn-secondary mb-2 d-flex justify-content-center save-comment" data-init="<?php echo $student_id; ?>" data-type="1" style="color:white;"> Simpan Ulasan</a>
-                              <select name="score" id="score" class="form-control" onchange="updateScore(this.value, '<?php echo $student_id; ?>', '1')">
+                              Keputusan:
+                              <select name="score" id="score" class="form-control" disabled onchange="updateScore(this.value, '<?php echo $student_id; ?>', '1')">
                                 <option value="">Pilih Keputusan</option>
                                 <option value="Betul" <?php echo ($writing1['score'] == 'Betul') ? 'selected' : ''; ?>>Betul</option>
                                 <option value="Salah" <?php echo ($writing1['score'] == 'Salah') ? 'selected' : ''; ?>>Salah</option>
@@ -391,15 +354,15 @@
                               
                             </td>
                             <td>
-                                <b>Jawapan Pelajar :</b>
+                                <b>Jawapan Yang Dihantar :</b>
                                 <div class="p-3 color-block bg-teal-100" data-clipboard-text="bg-teal-100"><?php echo writing_answer($student_id, '2'); ?></div>
-                                <b>Ulasan : <br>
-                                <textarea name="comment" id="comment-2" cols="30" rows="3" class="form-control"><?php echo $writing2['comment']; ?></textarea>
+                                <b>Ulasan Guru: <br>
+                                <textarea name="comment" id="comment-2" cols="30" rows="3" class="form-control" disabled><?php echo $writing2['comment']; ?></textarea>
                                 </b>
                             </td>
                             <td style="vertical-align: bottom;">
-                              <a class="btn btn-secondary mb-2 d-flex justify-content-center save-comment" data-init="<?php echo $student_id; ?>" data-type="2" style="color:white;"> Simpan Ulasan</a>
-                              <select name="score" id="score" class="form-control" onchange="updateScore(this.value, '<?php echo $student_id; ?>', '2')">
+                              Keputusan:
+                              <select name="score" id="score" class="form-control" disabled onchange="updateScore(this.value, '<?php echo $student_id; ?>', '2')">
                                 <option value="">Pilih Keputusan</option>
                                 <option value="Betul" <?php echo ($writing2['score'] == 'Betul') ? 'selected' : ''; ?>>Betul</option>
                                 <option value="Salah" <?php echo ($writing2['score'] == 'Salah') ? 'selected' : ''; ?>>Salah</option>
@@ -413,15 +376,15 @@
                               
                             </td>
                             <td>
-                                <b>Jawapan Pelajar :</b>
+                                <b>Jawapan Yang Dihantar :</b>
                                 <div class="p-3 color-block bg-teal-100" data-clipboard-text="bg-teal-100"><?php echo writing_answer($student_id, '3'); ?></div>
-                                <b>Ulasan : <br>
-                                <textarea name="comment" id="comment-3" cols="30" rows="3" class="form-control"><?php echo $writing3['comment']; ?></textarea>
+                                <b>Ulasan Guru: <br>
+                                <textarea name="comment" id="comment-3" cols="30" rows="3" class="form-control" disabled><?php echo $writing3['comment']; ?></textarea>
                                 </b>
                             </td>
                             <td style="vertical-align: bottom;">
-                              <a class="btn btn-secondary mb-2 d-flex justify-content-center save-comment" data-init="<?php echo $student_id; ?>" data-type="3" style="color:white;"> Simpan Ulasan</a>
-                              <select name="score" id="score" class="form-control" onchange="updateScore(this.value, '<?php echo $student_id; ?>', '3')">
+                              Keputusan:
+                              <select name="score" id="score" class="form-control" disabled onchange="updateScore(this.value, '<?php echo $student_id; ?>', '3')">
                                 <option value="">Pilih Keputusan</option>
                                 <option value="Betul" <?php echo ($writing3['score'] == 'Betul') ? 'selected' : ''; ?>>Betul</option>
                                 <option value="Salah" <?php echo ($writing3['score'] == 'Salah') ? 'selected' : ''; ?>>Salah</option>
@@ -436,15 +399,15 @@
                             </td>
                             <td>
                                 
-                                <b>Jawapan Pelajar :</b>
+                                <b>Jawapan Yang Dihantar :</b>
                                 <div class="p-3 color-block bg-teal-100" data-clipboard-text="bg-teal-100"><?php echo writing_answer($student_id, '4'); ?></div>
-                                <b>Ulasan : <br>
-                                <textarea name="comment" id="comment-4" cols="30" rows="3" class="form-control"><?php echo $writing4['comment']; ?></textarea>
+                                <b>Ulasan Guru: <br>
+                                <textarea name="comment" id="comment-4" cols="30" rows="3" class="form-control" disabled><?php echo $writing4['comment']; ?></textarea>
                                 </b>
                             </td>
                             <td style="vertical-align: bottom;">
-                              <a class="btn btn-secondary mb-2 d-flex justify-content-center save-comment" data-init="<?php echo $student_id; ?>" data-type="4" style="color:white;"> Simpan Ulasan</a>
-                              <select name="score" id="score" class="form-control" onchange="updateScore(this.value, '<?php echo $student_id; ?>', '4')">
+                              Keputusan:
+                              <select name="score" id="score" class="form-control" disabled onchange="updateScore(this.value, '<?php echo $student_id; ?>', '4')">
                                 <option value="">Pilih Keputusan</option>
                                 <option value="Betul" <?php echo ($writing4['score'] == 'Betul') ? 'selected' : ''; ?>>Betul</option>
                                 <option value="Salah" <?php echo ($writing4['score'] == 'Salah') ? 'selected' : ''; ?>>Salah</option>
@@ -456,7 +419,7 @@
                     </table>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <a class="btn btn-primary mt-3 selesai-semak" data-init="<?php echo $student_id; ?>" style="color:white;">Selesai</a>
+                    <a class="btn btn-primary mt-3" href="<?php echo base_url(''); ?>" style="color:white;">Kembali</a>
                 </div>
             </div>
           </div>

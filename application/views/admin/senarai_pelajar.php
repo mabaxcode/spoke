@@ -287,53 +287,17 @@
                     <tr>
                       <th>STUDENT ID.</th>
                       <th>NAME</th>
-                      <!-- <th>SYSTEM SCORE</th> -->
-                      <th>STATUS</th>
-                      <th class="text-end">ACTION</th>
+                      <th>USERNAME</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php foreach($students as $student): ?>
                     <tr>
-                      <td><a href="#" class="text-muted"><?php echo $student->id; ?></a></td>
-                      <td><?php echo $student->name; ?></td>
-                      <!-- <td> -->
-                        <?php
-                        // echo "Soalan 1 : " .  q1($student->id);echo "<br>";
-                        // echo "Soalan 2 : ". q2($student->id);echo "<br>";
-                        // echo "Soalan 3 : ". q3($student->id);echo "<br>";
-                        // echo "Soalan 4 : ". q4($student->id);echo "<br>";
-                        // echo "Soalan 5 : ". q5($student->id);echo "<br>";
-                        // echo "Soalan 6 : ". q6($student->id);echo "<br>";
-                        // echo "Soalan 7 : ". q7($student->id);echo "<br>";
-                        // echo "Soalan 8 : ". q8($student->id);echo "<br>";
-                        // echo "Soalan 9 : ". q9($student->id);
-                        ?>
-                      <!-- </td> -->
-                      <td><span class="d-flex align-items-center gap-2"><i
-                            class="fas fa-circle text-success f-10 m-r-5"></i>Jawapan Dihantar</span>
-                      </td>
-                      <td class="text-end"><a class="btn btn-primary btn-sm" style="cursor: pointer; color: white;" href="<?php echo base_url('admin/answers_details/' . $student->id); ?>">Semak Jawapan</a></td>
+                      <td>#<?php echo $student->id; ?></td>
+                      <td><?php echo $student->name; ?></a></td>
+                      <td><?php echo $student->username; ?></td>
                     </tr>
                     <?php endforeach; ?>
-                    <!-- <tr>
-                      <td><a href="#" class="text-muted">84564564</a></td>
-                      <td>Laptop</td>
-                      <td>300</td>
-                      <td><span class="d-flex align-items-center gap-2"><i
-                            class="fas fa-circle text-warning f-10 m-r-5"></i>Pending</span>
-                      </td>
-                      <td class="text-end"><button class="btn btn-primary btn-sm">Process</button></td>
-                    </tr>
-                    <tr>
-                      <td><a href="#" class="text-muted">84564564</a></td>
-                      <td>Mobile</td>
-                      <td>355</td>
-                      <td><span class="d-flex align-items-center gap-2"><i
-                            class="fas fa-circle text-success f-10 m-r-5"></i>Approved</span></td>
-                      <td class="text-end"><button class="btn btn-primary btn-sm">Process</button></td>
-                    </tr> -->
-                    
                   </tbody>
                 </table>
               </div>

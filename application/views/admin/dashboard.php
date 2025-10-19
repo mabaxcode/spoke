@@ -3,7 +3,7 @@
 <!-- [Head] start -->
 
 <head>
-  <title>Home | Mantis Bootstrap 5 Admin Template</title>
+  <title>SPOKe</title>
   <!-- [Meta] -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -213,7 +213,7 @@
         aria-expanded="false"
       >
         <img src="<?php echo base_url(); ?>assets-internal/images/user/avatar-2.jpg" alt="user-image" class="user-avtar">
-        <span>Stebin Ben</span>
+        <span>Admin</span>
       </a>
       <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
         <div class="dropdown-header">
@@ -222,8 +222,8 @@
               <img src="<?php echo base_url(); ?>assets-internal/images/user/avatar-2.jpg" alt="user-image" class="user-avtar wid-35">
             </div>
             <div class="flex-grow-1 ms-3">
-              <h6 class="mb-1">Stebin Ben</h6>
-              <span>UI/UX Designer</span>
+              <h6 class="mb-1">Admin</h6>
+              <span>admin@spoke.top</span>
             </div>
             <a href="<?php echo base_url('logout'); ?>" class="pc-head-link bg-transparent"><i class="ti ti-power text-danger"></i></a>
           </div>
