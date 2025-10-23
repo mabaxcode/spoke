@@ -278,36 +278,37 @@
        
 
         <div class="col-md-12 col-xl-12">
-          <h5 class="mb-3">Senarai Jawapan Murid</h5>
+          <h5 class="mb-3">Kemaskini Pelajar</h5>
           <div class="card tbl-card">
             <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-hover table-borderless mb-0">
-                  <thead>
-                    <tr>
-                      <th>STUDENT ID.</th>
-                      <th>NAME</th>
-                      <th>USERNAME</th>
-                      <th>KELAS</th>
-                      <th style="text-align: right;">TINDAKAN</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php foreach($students as $student): ?>
-                    <tr>
-                      <td>#<?php echo $student->id; ?></td>
-                      <td><?php echo $student->name; ?></a></td>
-                      <td><?php echo $student->username; ?></td>
-                      <td><?php echo $student->kelas; ?></td>
-                      <td style="text-align: right;">
-                        <a href="#" class="btn btn-sm btn-danger delete-student" data-init="<?php echo $student->id; ?>">Padam</a>
-                        <a href="<?php echo base_url('admin/update_student/'.$student->id); ?>" class="btn btn-sm btn-primary">Kemaskini</a>
-                      </td>
-                    </tr>
-                    <?php endforeach; ?>
-                  </tbody>
-                </table>
-              </div>
+                <!-- show validation errors -->
+                <?php if ($this->session->flashdata('error')): ?>
+                    <div class="alert alert-danger">
+                        <?php echo $this->session->flashdata('error'); ?>
+                    </div>
+                <?php endif; ?>
+                <!-- show success message -->
+                <?php if ($this->session->flashdata('success')): ?>
+                    <div class="alert alert-success">
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                <?php endif; ?>
+                <form method="post" action="<?php echo base_url('admin/proses_kemaskini_pelajar'); ?>">
+                    <div class="mb-3">
+                    <label for="nama" class="form-label">Nama Pelajar</label>
+                    <input type="text" class="form-control" id="nama" name="name" value="<?php echo set_value('name', $student->name); ?>" required>
+                    </div>
+                    <div class="mb-3">
+                    <label for="email" class="form-label">Nama Pengguna</label>
+                    <input type="text" class="form-control" id="username" name="username" value="<?php echo set_value('username', $student->username); ?>" required>
+                    </div>
+                    <div class="mb-3">
+                    <label for="kelas" class="form-label">Kelas</label>
+                    <input type="text" class="form-control" id="kelas" name="kelas" value="<?php echo set_value('kelas', $student->kelas); ?>" required>
+                    </div>
+                    <input type="hidden" name="student_id" value="<?php echo $student->id; ?>">
+                    <button type="submit" class="btn btn-primary">Kemaskini</button>
+                </form>
             </div>
           </div>
         </div>
@@ -363,39 +364,6 @@
   
   
   <script>font_change("Public-Sans");</script>
-
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const deleteButtons = document.querySelectorAll('.delete-student');
-
-        deleteButtons.forEach(button => {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                const studentId = this.getAttribute('data-init');
-
-                if (confirm('Padam pelajar ini?')) {
-                    fetch(`<?php echo base_url('admin/padam_pelajar/'); ?>${studentId}`, {
-                        method: 'DELETE',
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            alert('Pelajar berjaya dipadam');
-                            location.reload();
-                        } else {
-                            alert('Pelajar gagal dipadam.');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('An error occurred while deleting the student.');
-                    });
-                }
-            });
-        });
-    });
-  </script>
   
     
 

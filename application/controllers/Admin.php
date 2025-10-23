@@ -183,16 +183,18 @@ class Admin extends CI_Controller {
     {
         $name = $this->input->post('name');
         $username = $this->input->post('username');
+        $kelas = $this->input->post('kelas');
 
         // validation name and username are required
-        if (empty($name) || empty($username)) {
-            $this->session->set_flashdata('error', 'Name and Username are required');
+        if (empty($name) || empty($username) || empty($kelas)) {
+            $this->session->set_flashdata('error', 'Name, Username and Kelas are required');
             redirect('admin/tambah_pelajar');
         }
 
         $data = array(
             'name' => $name,
             'username' => $username,
+            'kelas' => $kelas,
             'is_submitted' => 0,
             'is_reviewed' => 0,
             'role' => 'student'
@@ -211,6 +213,56 @@ class Admin extends CI_Controller {
         $data['students'] = $this->db->get('student')->result();
 
         $this->load->view('admin/senarai_pelajar', $data);
+    }
+
+    function padam_pelajar($student_id)
+    {
+
+        // echo "Deleting student ID: " . $student_id . "\n";exit;
+        $this->db->where('id', $student_id);
+        $this->db->delete('student');
+
+        echo json_encode(array('success' => true));
+
+        // success flash message
+        // $this->session->set_flashdata('success', 'Pelajar berjaya dipadam');
+
+        // redirect('admin/senarai_pelajar');
+    }
+
+    function update_student($student_id)
+    {
+        $data['student'] = $this->db->get_where('student', array('id' => $student_id))->row();
+
+        $this->load->view('admin/update_student', $data);
+    }
+
+    function proses_kemaskini_pelajar()
+    {
+        $student_id = $this->input->post('student_id');
+        $name = $this->input->post('name');
+        $username = $this->input->post('username');
+        $kelas = $this->input->post('kelas');
+
+        // validation name and username are required
+        if (empty($name) || empty($username) || empty($kelas)) {
+            $this->session->set_flashdata('error', 'Name, Username and Kelas are required');
+            redirect('admin/update_student/'.$student_id);
+        }
+
+        $data = array(
+            'name' => $name,
+            'username' => $username,
+            'kelas' => $kelas
+        );
+
+        $this->db->where('id', $student_id);
+        $this->db->update('student', $data);
+
+        // success flash message
+        $this->session->set_flashdata('success', 'Pelajar berjaya dikemaskini');
+
+        redirect('admin/senarai_pelajar');
     }
     
 }

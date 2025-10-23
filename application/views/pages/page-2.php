@@ -76,7 +76,7 @@ font-size: 20px;
     
     <div class="card bg-dark text-white border-0" style="width: 1200px; height: 700px; border-radius: 20px; overflow: hidden;">
       
-      <img src="<?php echo base_url('img/page-2-new.png')?>" class="card-img" alt="Paris Background" style="height: 100%;">
+      <img src="<?php echo base_url('img/page-2-new-new.png')?>" class="card-img" alt="Paris Background" style="height: 100%;">
       
       <div class="card-img-overlay d-flex flex-column justify-content-between text-center">
 

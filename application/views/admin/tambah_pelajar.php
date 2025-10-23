@@ -302,6 +302,10 @@
                     <label for="email" class="form-label">Nama Pengguna</label>
                     <input type="text" class="form-control" id="username" name="username" required>
                     </div>
+                    <div class="mb-3">
+                    <label for="kelas" class="form-label">Kelas</label>
+                    <input type="text" class="form-control" id="kelas" name="kelas" required>
+                    </div>
                     <button type="submit" class="btn btn-primary">Tambah Pelajar</button>
                 </form>
             </div>
